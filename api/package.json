@@ -1,0 +1,23 @@
+{
+  "name": "risk-smart-api",
+  "version": "1.0.50",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "bun run --watch src/index.ts",
+    "gen-migration": "npx drizzle-kit generate:sqlite --schema=./src/db/schema.ts",
+    "migrate": "bun run ./src/db/migrate.ts"
+  },
+  "dependencies": {
+    "@apollo/server": "^4.9.3",
+    "@elysiajs/apollo": "^0.6.0",
+    "@elysiajs/cors": "^0.6.0",
+    "drizzle-orm": "^0.28.6",
+    "elysia": "latest",
+    "graphql": "^16.8.0"
+  },
+  "devDependencies": {
+    "bun-types": "latest",
+    "drizzle-kit": "^0.19.13"
+  },
+  "module": "src/index.js"
+}

@@ -1,0 +1,55 @@
+type Company {
+  id: Int!
+  name: String!
+  headquartersLocation: String
+  industry: String
+}
+
+type Employee {
+  id: Int!
+  firstName: String!
+  lastName: String!
+  email: String!
+  phoneNumber: String
+  hireDate: String!
+  jobTitle: String!
+  salary: Int!
+  company: Company!
+}
+
+type Query {
+  employees: [Employee!]!,
+}
+
+input UpdateEmployeeInput {
+  id: Int!
+  firstName: String
+  lastName: String
+  phoneNumber: String
+  jobTitle: String
+  salary: Int
+}
+
+input CreateEmployeeInput {
+  firstName: String!
+  lastName: String!
+  email: String
+  phoneNumber: String
+  hireDate: String!
+  jobTitle: String
+  salary: Int
+  companyId: Int!
+}
+
+input CreateCompanyInput {
+  name: String!
+  headquartersLocation: String
+  industry: String
+}
+
+type Mutation {
+  updateEmployee(input: UpdateEmployeeInput!): Employee!
+  createEmployee(input: CreateEmployeeInput!): Employee!
+
+  createCompany(input: CreateCompanyInput!): Company! 
+}

@@ -1,0 +1,15 @@
+mutation UDATE_EMPLOYEE($input: UpdateEmployeeInput!) {
+  updateEmployee(input: $input) {
+    id
+    firstName
+    lastName
+    salary
+    jobTitle
+    hireDate
+    company {
+      name
+      id
+      headquartersLocation
+    }
+  }
+}

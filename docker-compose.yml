@@ -1,0 +1,15 @@
+version: '3'
+services:
+  api:
+    build:
+      context: .
+      dockerfile: ./api/Dockerfile
+    ports:
+      - "3000:3000" # Map host port to API container port
+
+  frontend:
+    build:
+      context: .
+      dockerfile: ./frontend/Dockerfile
+    ports:
+      - "5173:5713" # Map host port to frontend container port
